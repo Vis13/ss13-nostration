@@ -46582,7 +46582,6 @@
 	dir = 4
 	},
 /obj/machinery/power/apc{
-	step_x = 27
 	},
 /obj/structure/cable/white{
 	icon_state = "0-8"
