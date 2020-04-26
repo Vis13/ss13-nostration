@@ -1,12 +1,29 @@
+//pr Multi-Z Openspace visual fixes. #49323
+GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdrop, new)
+
+/atom/movable/openspace_backdrop
+	name			= "openspace_backdrop"
+
+	anchored		= TRUE
+
+	icon            = 'icons/turf/floors.dmi'
+	icon_state      = "grey"
+	plane           = OPENSPACE_BACKDROP_PLANE
+	mouse_opacity 	= MOUSE_OPACITY_TRANSPARENT
+	layer           = SPLASHSCREEN_LAYER
+
 /turf/open/openspace
 	name = "open space"
 	desc = "Watch your step!"
-	icon_state = "grey"
+	icon_state = "transparent"
 	baseturfs = /turf/open/openspace
 	CanAtmosPassVertical = ATMOS_PASS_YES
 	//mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/can_cover_up = TRUE
 	var/can_build_on = TRUE
+	intact = 0
+/turf/open/openspace/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/openspace/debug/update_multiz()
 	..()
@@ -14,8 +31,12 @@
 
 /turf/open/openspace/Initialize() // handle plane and layer here so that they don't cover other obs/turfs in Dream Maker
 	. = ..()
-	plane = FLOOR_OPENSPACE_PLANE
+	plane = OPENSPACE_PLANE
 	layer = OPENSPACE_LAYER
+
+//pr Multi-Z Openspace visual fixes. #49323
+	vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
+
 	return INITIALIZE_HINT_LATELOAD
 
 /turf/open/openspace/LateInitialize()
@@ -31,7 +52,8 @@
 	if(!T)
 		vis_contents.len = 0
 		if(prune_on_fail)
-			ChangeTurf(/turf/open/floor/plating)
+			ChangeTurf(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
+
 		return FALSE
 	if(init)
 		vis_contents += T
@@ -46,6 +68,12 @@
 	if(dir != DOWN)
 		return
 	update_multiz()
+
+/turf/open/openspace/can_have_cabling()
+	if(locate(/obj/structure/lattice/catwalk, src))
+		return TRUE
+	return FALSE
+
 
 /turf/open/openspace/zAirIn()
 	return TRUE
@@ -84,14 +112,14 @@
 		if(L)
 			if(R.use(1))
 				to_chat(user, "<span class='notice'>You construct a catwalk.</span>")
-				playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
+				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 				new/obj/structure/lattice/catwalk(src)
 			else
 				to_chat(user, "<span class='warning'>You need two rods to build a catwalk!</span>")
 			return
 		if(R.use(1))
 			to_chat(user, "<span class='notice'>You construct a lattice.</span>")
-			playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
+			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			ReplaceWithLattice()
 		else
 			to_chat(user, "<span class='warning'>You need one rod to build a lattice.</span>")
@@ -104,7 +132,7 @@
 			var/obj/item/stack/tile/plasteel/S = C
 			if(S.use(1))
 				qdel(L)
-				playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
+				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 				to_chat(user, "<span class='notice'>You build a floor.</span>")
 				PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			else

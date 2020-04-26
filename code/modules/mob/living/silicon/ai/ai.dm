@@ -1004,6 +1004,8 @@
 	. = ..()
 	if(.)
 		end_multicam()
+/mob/living/silicon/ai/zMove(dir, feedback = FALSE)
+	. = eyeobj.zMove(dir, feedback)
 
 /mob/living/silicon/ai/verb/ai_cryo()
 	set name = "AI Cryogenic Stasis"

@@ -1,4 +1,3 @@
-
 /mob
 	var/list/screens = list()
 
