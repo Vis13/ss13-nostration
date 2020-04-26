@@ -281,6 +281,14 @@
 	name = "Prison Intercom (General)";
 	pixel_y = 24;
 	prison_radio = 1
+/area/mine/eva)
+"aT" = (
+/obj/docking_port/stationary/public_mining_dock,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"aU" = (
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
@@ -1514,6 +1522,10 @@
 /area/mine/production)
 "yF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+"en" = (
+/obj/structure/table,
+/obj/item/pickaxe,
+/obj/item/flashlight/lantern,
 /turf/open/floor/plasteel,
 /area/mine/production)
 "yQ" = (
@@ -2740,6 +2752,27 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel/freezer,
+/area/mine/living_quarters)
+"lc" = (
+/obj/structure/table,
+/obj/item/flashlight/lantern,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"mh" = (
+/obj/machinery/door/airlock/glass{
+	name = "Break Room"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"np" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -2833,6 +2866,12 @@
 "Rv" = (
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
+"sb" = (
+/obj/structure/sign/warning/xeno_mining,
+/turf/closed/wall,
+/area/mine/production)
+"se" = (
+/obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/purple{
@@ -2877,6 +2916,37 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
+/turf/open/floor/plasteel/freezer,
+/area/mine/living_quarters)
+"vm" = (
+/obj/structure/table,
+/obj/item/flashlight/lantern,
+/obj/item/storage/bag/ore,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"vp" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "miningdorm3";
+	name = "Door Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 25;
+	specialfunctions = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/mine/living_quarters)
+"vr" = (
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "Sd" = (
@@ -2908,6 +2978,15 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+"wQ" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"xv" = (
+/obj/item/radio/intercom{
+	dir = 8;
+	name = "Station Intercom (General)";
+	pixel_x = 28
 	},
 /turf/open/floor/plating,
 /area/mine/laborcamp/security)
@@ -2965,6 +3044,8 @@
 	name = "Mining Shuttle Airlock";
 	opacity = 0
 	},
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel,
 /area/mine/production)
 "TC" = (
@@ -3203,6 +3284,35 @@
 	dir = 8;
 	name = "Station Intercom (General)";
 	pixel_x = 28
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"Jt" = (
+/obj/machinery/light,
+/obj/structure/table,
+/obj/item/storage/bag/ore,
+/obj/item/gps/mining,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"JB" = (
+/obj/structure/table,
+/obj/item/gps/mining,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"KR" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plasteel,
+/area/mine/living_quarters)
+"Le" = (
+/obj/structure/sign/warning/xeno_mining,
+/turf/closed/wall,
+/area/mine/eva)
+"LK" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
 	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -3240,6 +3350,10 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
+"QR" = (
+/obj/structure/table,
+/obj/item/gps/mining,
+/turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "XX" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -3289,6 +3403,8 @@
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
 "Yy" = (
+/area/mine/living_quarters)
+"TO" = (
 /obj/machinery/door/airlock{
 	id_tag = "miningbathroom";
 	name = "Restroom"
@@ -3339,7 +3455,16 @@
 "Zp" = (
 /obj/machinery/camera{
 	c_tag = "Crew Area Hallway";
-	network = list("mine")
+"Zr" = (
+/obj/structure/sign/warning/xeno_mining,
+/turf/closed/wall,
+/area/mine/living_quarters)
+"Zu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/plasteel,
@@ -4402,6 +4527,228 @@ VT
 VT
 VT
 VT
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+bA
+bA
+ac
+ak
+cZ
+ak
+bQ
+bQ
+bQ
+Rq
+Zr
+eu
+Fu
+eu
+ac
+ac
+ac
+ab
+ab
+"}
+(13,1,1) = {"
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+cY
+cY
+cY
+cY
+eI
+dj
+dN
+bQ
+dU
+ed
+ed
+di
+et
+vr
+eu
+ac
+ac
+ab
+ab
+ab
+"}
+(14,1,1) = {"
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+cY
+bB
+bB
+cY
+dr
+Zu
+jz
+bQ
+dV
+di
+JB
+KR
+di
+di
+eu
+ac
+ab
+ab
+ab
+ab
+"}
+(15,1,1) = {"
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+cY
+bC
+bL
+cY
+cC
+dk
+ax
+bQ
+dW
+di
+di
+di
+di
+en
+eu
+ac
+ab
+ab
+ab
+ab
+"}
+(16,1,1) = {"
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ak
+cY
+ah
+am
+ep
+dl
+Za
+Cv
+Mi
+dX
+ef
+en
+lc
+di
+vm
+eu
+ac
+ab
+ab
+ab
+ab
+"}
+(17,1,1) = {"
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ak
+bz
+cY
+cP
+dS
+cY
+ca
+dD
+et
+bQ
+dY
+Xm
+di
+di
+di
+Jt
+bQ
+ac
+ab
+ab
+ab
+ab
+"}
+(18,1,1) = {"
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ak
+dL
+cY
+cs
+cJ
+cY
+dq
+Xi
+nP
+bQ
+Rt
+xv
+Az
+QR
+di
+wQ
+bQ
+dL
+ak
+ab
+ab
+ab
 "}
 (19,1,1) = {"
 JY
@@ -5998,6 +6345,36 @@ VT
 VT
 VT
 VT
+ac
+ak
+ak
+eM
+aN
+at
+np
+nx
+aY
+aZ
+np
+bh
+cN
+bH
+bM
+bX
+cN
+zE
+aw
+aw
+sb
+aw
+cu
+ak
+ak
+ac
+ac
+ab
+ab
+ab
 "}
 (47,1,1) = {"
 VT
@@ -6396,7 +6773,38 @@ Ye
 Lm
 Lm
 VT
-VT
+
+ak
+ak
+ak
+Le
+aE
+aU
+bi
+Cu
+dL
+aw
+cD
+dQ
+aw
+ev
+Oe
+ev
+ev
+xK
+aw
+ak
+ak
+ak
+ak
+ak
+ak
+ac
+ac
+ac
+ab
+ab
+
 "}
 (54,1,1) = {"
 MD
