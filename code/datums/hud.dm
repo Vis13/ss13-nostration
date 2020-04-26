@@ -109,6 +109,11 @@ GLOBAL_LIST_INIT(huds, list(
 /datum/atom_hud/proc/add_to_single_hud(mob/M, atom/A) //unsafe, no sanity apart from client
 	if(!M || !M.client || !A)
 		return
+
+	var/in_cone = FALSE
+	if(!DEAD)
+		if(A in cone(M, OPPOSITE_DIR(M.dir), range(10, M)))
+			in_cone = TRUE
 	for(var/i in hud_icons)
 		if(A.hud_list[i])
 			M.client.images |= A.hud_list[i]
