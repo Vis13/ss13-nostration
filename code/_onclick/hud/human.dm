@@ -91,6 +91,7 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
+
 	using = new/obj/screen/language_menu
 	using.icon = ui_style
 	if(!widescreenlayout) // CIT CHANGE
@@ -339,6 +340,9 @@
 		staminabuffer.hud = src
 		infodisplay += staminabuffer
 	//END OF CIT CHANGES
+
+	usr.fov = usr.overlay_fullscreen("vc",/obj/screen/fullscreen/fov)
+
 
 	healthdoll = new /obj/screen/healthdoll()
 	healthdoll.hud = src
