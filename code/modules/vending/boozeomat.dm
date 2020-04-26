@@ -19,6 +19,8 @@
 					/obj/item/reagent_containers/food/drinks/bottle/grappa = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 					/obj/item/reagent_containers/food/drinks/ale = 6,
+					/obj/item/reagent_containers/food/drinks/bottle/champagne = 2,
+					/obj/item/reagent_containers/food/condiment/sugar = 2,
 					/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 4,
 					/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 4,
 					/obj/item/reagent_containers/food/drinks/bottle/limejuice = 4,
