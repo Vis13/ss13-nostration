@@ -40,6 +40,7 @@
 	QDEL_LIST(diseases)
 	return ..()
 
+
 /mob/living/onZImpact(turf/T, levels)
 	if(!isgroundlessturf(T))
 		ZImpactDamage(T, levels)
@@ -434,7 +435,6 @@
 /mob/living/proc/lay_down()
 	set name = "Rest"
 	set category = "IC"
-
 	resting = !resting
 	to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
 	update_canmove()
@@ -527,6 +527,7 @@
 	fire_stacks = 0
 	confused = 0
 	update_mobility()
+
 	//Heal all organs
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
@@ -534,6 +535,7 @@
 			for(var/organ in C.internal_organs)
 				var/obj/item/organ/O = organ
 				O.setOrganDamage(0)
+
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()
@@ -1124,8 +1126,11 @@
 		if(client.eye && client.eye != src)
 			var/atom/AT = client.eye
 			AT.get_remote_view_fullscreens(src)
+			hide_cone()
+			insideContainer = 1
 		else
 			clear_fullscreen("remote_view", 0)
+			insideContainer = 0
 		update_pipe_vision()
 
 /mob/living/update_mouse_pointer()
@@ -1193,8 +1198,6 @@
 	if(healing_chems)
 		reagents.add_reagent_list(healing_chems)
 
-/mob/living/canface()
-	return ..() && CHECK_MOBILITY(src, MOBILITY_MOVE)
 
 /mob/living/proc/set_gender(ngender = NEUTER, silent = FALSE, update_icon = TRUE, forced = FALSE)
 	if(forced || (!ckey || client?.prefs.cit_toggles & (ngender == FEMALE ? FORCED_FEM : FORCED_MASC)))
@@ -1217,3 +1220,8 @@
 			STAMINA:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=stamina' id='stamina'>[getStaminaLoss()]</a>
 		</font>
 	"}
+
+/mob/living/setDir(newdir, ismousemovement = TRUE)
+	..()
+	update_vision_cone()
+

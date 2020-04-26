@@ -148,6 +148,8 @@
 		if(layer == LYING_MOB_LAYER)
 			layer = initial(layer)
 	update_transform()
+	update_vision_cone()
+
 	lying_prev = lying
 
 	//Handle citadel autoresist

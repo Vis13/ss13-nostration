@@ -84,6 +84,12 @@
 	if(lying && !buckled && prob(getBruteLoss()*200/maxHealth))
 		makeTrail(newloc, T, old_direction)
 
+	for(var/mob/M in oview(src))
+		if(M.client && (src in cone(M, OPPOSITE_DIR(M.dir), view(10, M))))
+			M.update_vision_cone()
+
+	update_vision_cone()
+
 /mob/living/forceMove(atom/destination)
 	stop_pulling()
 	if(buckled)
