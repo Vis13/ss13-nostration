@@ -8,3 +8,6 @@
 	    "cargo": "cargo_delta"
     }
 }
+    },
+    "traits": [{"Up" : 1, "Linkage" : "Cross"}, {"Baseturf" : "/turf/open/openspace", "Down" : -1, "Linkage" : "Cross"}]
+}
