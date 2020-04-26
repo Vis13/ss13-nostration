@@ -371,7 +371,7 @@ SUBSYSTEM_DEF(vote)
 					to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
 			if("transfer") // austation begin -- Crew autotransfer vote
 				if(. == "Initiate Crew Transfer")
-					SSshuttle.autoEnd()
+//					SSshuttle.autoEnd()
 					var/obj/machinery/computer/communications/C = locate() in GLOB.machines
 					if(C)
 						C.post_status("shuttle") // austation end
