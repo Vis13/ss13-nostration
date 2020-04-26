@@ -72,6 +72,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ismush(A) (is_species(A, /datum/species/mush))
 #define isshadow(A) (is_species(A, /datum/species/shadow))
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
+#define isNightmare(A) (is_species(A, /datum/species/shadow/nightmare))
+
 
 // Citadel specific species
 #define isipcperson(A) (is_species(A, /datum/species/ipc))
