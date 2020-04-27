@@ -639,11 +639,11 @@ SUBSYSTEM_DEF(shuttle)
 
 	QDEL_LIST(remove_images)
 
-/datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
-	if(EMERGENCY_IDLE_OR_RECALLED)
-		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("The shift has come to an end and the shuttle called. [GLOB.security_level == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "shuttlecalled", "Priority")
-		log_game("Round end vote passed. Shuttle has been auto-called.")
-		message_admins("Round end vote passed. Shuttle has been auto-called.")
-	emergencyNoRecall = TRUE
-	endvote_passed = TRUE
+// /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
+//	if(EMERGENCY_IDLE_OR_RECALLED)
+//		SSshuttle.emergency.request(silent = TRUE)
+//		priority_announce("The shift has come to an end and the shuttle called. [seclevel2num(get_security_level()) == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "shuttlecalled", "Priority")
+//		log_game("Round end vote passed. Shuttle has been auto-called.")
+//		message_admins("Round end vote passed. Shuttle has been auto-called.")
+//	emergencyNoRecall = TRUE
+//	endvote_passed = TRUE
